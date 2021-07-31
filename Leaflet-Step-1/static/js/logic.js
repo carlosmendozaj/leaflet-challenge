@@ -47,7 +47,7 @@ function createFeatures(earthquakeData) {
         return new L.circle(latlon,
           {fillColor:circleColor(feature.geometry.coordinates[2]),
           color:"gray",
-          radius:(feature.properties.mag)*20000,
+          radius:(feature.properties.mag) * 15000,
           stroke: true,
           weight: 1,
           fillOpacity:0.8
@@ -65,7 +65,7 @@ function createMap(earthquakes) {
   // Map Layers:
   var satellite = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
+    tileSize: 500,
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/satellite-v9",
@@ -74,7 +74,7 @@ function createMap(earthquakes) {
 
   var grayscale = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
+    tileSize: 500,
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/light-v10",
@@ -83,7 +83,7 @@ function createMap(earthquakes) {
 
   var outdoors = L.tileLayer("https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}", {
     attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
-    tileSize: 512,
+    tileSize: 500,
     maxZoom: 18,
     zoomOffset: -1,
     id: "mapbox/outdoors-v11",
