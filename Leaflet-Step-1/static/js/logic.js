@@ -41,7 +41,6 @@ function createFeatures(earthquakeData) {
       
   }
 
-  // Create a GeoJSON layer containing the features array on the earthquakeData object
   // Run the onEachFeature function once for each piece of data in the array
   var earthquakes = L.geoJSON(earthquakeData, {
       pointToLayer:function(feature,latlon){
@@ -107,15 +106,13 @@ function createMap(earthquakes) {
   // Create our map, giving it the streetmap and earthquakes layers to display on load
   var myMap = L.map("mapid", {
     center: [
-      37.62, -99.59
+      35, -100
     ],
-    zoom: 5,
+    zoom: 3,
     layers: [satellite ,earthquakes]
   });
 
-  // Create a layer control
-  // Pass in our baseMaps and overlayMaps
-  // Add the layer control to the map
+  // Create a layer Select
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
